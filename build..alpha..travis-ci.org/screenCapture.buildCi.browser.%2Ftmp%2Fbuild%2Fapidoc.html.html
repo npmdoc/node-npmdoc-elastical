@@ -1,0 +1,2996 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/ramv/node-elastical/">elastical (v0.0.13)</a>
+</h1>
+<h4>An ElasticSearch client.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.elastical">module elastical</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client">
+            function <span class="apidocSignatureSpan">elastical.</span>Client
+            <span class="apidocSignatureSpan">(host, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index">
+            function <span class="apidocSignatureSpan">elastical.</span>Index
+            <span class="apidocSignatureSpan">(client, name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">elastical.</span>Client.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">elastical.</span>Index.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">elastical.</span>util</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.elastical.Client">module elastical.Client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.Client">
+            function <span class="apidocSignatureSpan">elastical.</span>Client
+            <span class="apidocSignatureSpan">(host, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.elastical.Client.prototype">module elastical.Client.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype._request">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>_request
+            <span class="apidocSignatureSpan">(path, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.analyze">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>analyze
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.applyAliasesActions">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>applyAliasesActions
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.bulk">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>bulk
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.count">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>count
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.createIndex">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>createIndex
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.delete">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>delete
+            <span class="apidocSignatureSpan">(indexName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.deleteIndex">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>deleteIndex
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.deletePercolator">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>deletePercolator
+            <span class="apidocSignatureSpan">(indexName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.deleteRiver">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>deleteRiver
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.get">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>get
+            <span class="apidocSignatureSpan">(indexName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.getAliases">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>getAliases
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.getIndex">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>getIndex
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.getMapping">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>getMapping
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.getPercolator">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>getPercolator
+            <span class="apidocSignatureSpan">(indexName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.getRiver">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>getRiver
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.getSettings">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>getSettings
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.index">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>index
+            <span class="apidocSignatureSpan">(indexName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.indexExists">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>indexExists
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.multiGet">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>multiGet
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.percolate">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>percolate
+            <span class="apidocSignatureSpan">(indexName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.putMapping">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>putMapping
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.putRiver">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>putRiver
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.refresh">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>refresh
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.search">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>search
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.set">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>set
+            <span class="apidocSignatureSpan">(indexName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.setPercolator">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>setPercolator
+            <span class="apidocSignatureSpan">(indexName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.stats">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>stats
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Client.prototype.updateSettings">
+            function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>updateSettings
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">elastical.Client.prototype.</span>_SEARCH_PARAMS</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.elastical.Index">module elastical.Index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.Index">
+            function <span class="apidocSignatureSpan">elastical.</span>Index
+            <span class="apidocSignatureSpan">(client, name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.analyze">
+            function <span class="apidocSignatureSpan">elastical.Index.</span>analyze
+            <span class="apidocSignatureSpan">(client, text, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.applyAliasesActions">
+            function <span class="apidocSignatureSpan">elastical.Index.</span>applyAliasesActions
+            <span class="apidocSignatureSpan">(client, actions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.bulk">
+            function <span class="apidocSignatureSpan">elastical.Index.</span>bulk
+            <span class="apidocSignatureSpan">(client, operations, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.count">
+            function <span class="apidocSignatureSpan">elastical.Index.</span>count
+            <span class="apidocSignatureSpan">(client, names, type, query, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.create">
+            function <span class="apidocSignatureSpan">elastical.Index.</span>create
+            <span class="apidocSignatureSpan">(client, name, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.delete">
+            function <span class="apidocSignatureSpan">elastical.Index.</span>delete
+            <span class="apidocSignatureSpan">(client, names, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.deleteRiver">
+            function <span class="apidocSignatureSpan">elastical.Index.</span>deleteRiver
+            <span class="apidocSignatureSpan">( client, name, callback )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.exists">
+            function <span class="apidocSignatureSpan">elastical.Index.</span>exists
+            <span class="apidocSignatureSpan">(client, names, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.getAliases">
+            function <span class="apidocSignatureSpan">elastical.Index.</span>getAliases
+            <span class="apidocSignatureSpan">(client, names, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.getMapping">
+            function <span class="apidocSignatureSpan">elastical.Index.</span>getMapping
+            <span class="apidocSignatureSpan">(client, names, type, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.getRiver">
+            function <span class="apidocSignatureSpan">elastical.Index.</span>getRiver
+            <span class="apidocSignatureSpan">( client, name, callback )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.getSettings">
+            function <span class="apidocSignatureSpan">elastical.Index.</span>getSettings
+            <span class="apidocSignatureSpan">(client, names, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.multiGet">
+            function <span class="apidocSignatureSpan">elastical.Index.</span>multiGet
+            <span class="apidocSignatureSpan">(client, index, type, data, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.putMapping">
+            function <span class="apidocSignatureSpan">elastical.Index.</span>putMapping
+            <span class="apidocSignatureSpan">(client, names, type, mapping, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.putRiver">
+            function <span class="apidocSignatureSpan">elastical.Index.</span>putRiver
+            <span class="apidocSignatureSpan">( client, name, config, callback )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.refresh">
+            function <span class="apidocSignatureSpan">elastical.Index.</span>refresh
+            <span class="apidocSignatureSpan">(client, names, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.updateSettings">
+            function <span class="apidocSignatureSpan">elastical.Index.</span>updateSettings
+            <span class="apidocSignatureSpan">(client, index, settings, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.elastical.Index.prototype">module elastical.Index.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.analyze">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>analyze
+            <span class="apidocSignatureSpan">(text, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.count">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>count
+            <span class="apidocSignatureSpan">(query, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.delete">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>delete
+            <span class="apidocSignatureSpan">(type, id, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.deleteIndex">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>deleteIndex
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.deleteMapping">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>deleteMapping
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.deletePercolator">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>deletePercolator
+            <span class="apidocSignatureSpan">(percolator, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.deleteRiver">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>deleteRiver
+            <span class="apidocSignatureSpan">( name, callback )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.exists">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>exists
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.get">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>get
+            <span class="apidocSignatureSpan">(id, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.getMapping">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>getMapping
+            <span class="apidocSignatureSpan">(type, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.getPercolator">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>getPercolator
+            <span class="apidocSignatureSpan">(percolator, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.getRiver">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>getRiver
+            <span class="apidocSignatureSpan">( name, callback )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.index">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>index
+            <span class="apidocSignatureSpan">(type, doc, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.optimize">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>optimize
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.percolate">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>percolate
+            <span class="apidocSignatureSpan">(type, doc, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.putMapping">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>putMapping
+            <span class="apidocSignatureSpan">(type, mapping, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.putRiver">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>putRiver
+            <span class="apidocSignatureSpan">( name, config, callback )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.refresh">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>refresh
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.search">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>search
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.set">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>set
+            <span class="apidocSignatureSpan">(type, doc, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.setPercolator">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>setPercolator
+            <span class="apidocSignatureSpan">(percolator, query, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.Index.prototype.stats">
+            function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>stats
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.elastical.util">module elastical.util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.util.each">
+            function <span class="apidocSignatureSpan">elastical.util.</span>each
+            <span class="apidocSignatureSpan">(obj, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.util.merge">
+            function <span class="apidocSignatureSpan">elastical.util.</span>merge
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.util.mix">
+            function <span class="apidocSignatureSpan">elastical.util.</span>mix
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elastical.util.values">
+            function <span class="apidocSignatureSpan">elastical.util.</span>values
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.elastical" id="apidoc.module.elastical">module elastical</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client" id="apidoc.element.elastical.Client">
+        function <span class="apidocSignatureSpan">elastical.</span>Client
+        <span class="apidocSignatureSpan">(host, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Client(host, options) {
+    // Allow options without host.
+    if (typeof host === 'object') {
+        options = host;
+        host    = undefined;
+    }
+
+    this.host    = host || '127.0.0.1';
+    this.options = options || {};
+
+    if(typeof this.options.port === 'undefined') {
+      this.options.port = 9200;
+    }
+    else if(this.options.port === null) {
+      this.options.port = null;
+    }
+    this.options.protocol || (this.options.protocol = 'http');
+    this.options.timeout || (this.options.timeout = 60000);
+    this.options.basePath || (this.options.basePath = null);
+
+    this._indexCache = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var elastical = require('elastical');
+```
+
+Instantiate an Elastical client that will connect to http://127.0.0.1:9200:
+
+```js
+var client = new elastical.<span class="apidocCodeKeywordSpan">Client</span>();
+```
+
+Or specify a custom host and port:
+
+```js
+var client = new elastical.Client('example.com', {port: 1234});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index" id="apidoc.element.elastical.Index">
+        function <span class="apidocSignatureSpan">elastical.</span>Index
+        <span class="apidocSignatureSpan">(client, name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Index(client, name) {
+    this.client = client;
+    this.name   = name;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.elastical.Client" id="apidoc.module.elastical.Client">module elastical.Client</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.Client" id="apidoc.element.elastical.Client.Client">
+        function <span class="apidocSignatureSpan">elastical.</span>Client
+        <span class="apidocSignatureSpan">(host, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Client(host, options) {
+    // Allow options without host.
+    if (typeof host === 'object') {
+        options = host;
+        host    = undefined;
+    }
+
+    this.host    = host || '127.0.0.1';
+    this.options = options || {};
+
+    if(typeof this.options.port === 'undefined') {
+      this.options.port = 9200;
+    }
+    else if(this.options.port === null) {
+      this.options.port = null;
+    }
+    this.options.protocol || (this.options.protocol = 'http');
+    this.options.timeout || (this.options.timeout = 60000);
+    this.options.basePath || (this.options.basePath = null);
+
+    this._indexCache = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var elastical = require('elastical');
+```
+
+Instantiate an Elastical client that will connect to http://127.0.0.1:9200:
+
+```js
+var client = new elastical.<span class="apidocCodeKeywordSpan">Client</span>();
+```
+
+Or specify a custom host and port:
+
+```js
+var client = new elastical.Client('example.com', {port: 1234});
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.elastical.Client.prototype" id="apidoc.module.elastical.Client.prototype">module elastical.Client.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype._request" id="apidoc.element.elastical.Client.prototype._request">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>_request
+        <span class="apidocSignatureSpan">(path, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_request = function (path, options, callback) {
+    var url = this.baseUrl + path;
+
+    if (typeof options === 'function') {
+        callback = options;
+        options  = {};
+    }
+
+    // Callback is optional.
+    callback || (callback = noop);
+
+    options = util.merge(options);
+    options.uri = url;
+
+    [ 'timeout',
+      'pool',
+      'agent',
+      'headers',
+      'followRedirect',
+      'followAllRedirects',
+      'proxy',
+      'oauth',
+      'strictSSL',
+      'jar'].forEach(function(key){
+      if(this.options[key] == null) return
+      options[key] || (options[key] = this.options[key]);
+    }, this);
+
+    // Write executable curl commands to stderr for easier debugging when
+    // this client's curlDebug option is true.
+    if (this.options.curlDebug) {
+        curlDebug(options);
+    }
+
+    // Provide a testing hook to allow inspection of the request options
+    // without actually sending a request.
+    if (this._testHook) {
+        return this._testHook(null, options), undefined;
+    }
+    request(url, options, function (err, res, body) {
+        if (err) { return callback(err), undefined; }
+
+        // The request module will automatically try to parse the
+        // response as JSON if `options.json` is truthy and the response
+        // has an application/json content-type, but it currently fails
+        // on content-types with charset suffixes, so it can't be relied
+        // upon.
+        //
+        // See https://github.com/mikeal/request/commit/68c17f6c9a3d7217368b3b8bc61203e6a14eb4f0
+        if (typeof body === 'string' || body instanceof Buffer) {
+            body = body.toString('utf8');
+
+            try {
+                body = JSON.parse(body);
+            } catch (ex) {}
+        }
+
+        if (res.statusCode &lt; 200 || res.statusCode &gt; 299) {
+            callback(Error((body &amp;&amp; body.error) || 'HTTP ' + res.statusCode),
+                body || {});
+            return;
+        }
+
+        callback(null, body || {});
+        return;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.analyze" id="apidoc.element.elastical.Client.prototype.analyze">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>analyze
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">analyze = function () {
+    var args = Array.prototype.slice.call(arguments);
+
+    args.unshift(this);
+    return Index[methodName].apply(Index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.applyAliasesActions" id="apidoc.element.elastical.Client.prototype.applyAliasesActions">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>applyAliasesActions
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">applyAliasesActions = function () {
+    var args = Array.prototype.slice.call(arguments);
+
+    args.unshift(this);
+    return Index[methodName].apply(Index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.bulk" id="apidoc.element.elastical.Client.prototype.bulk">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>bulk
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bulk = function () {
+    var args = Array.prototype.slice.call(arguments);
+
+    args.unshift(this);
+    return Index[methodName].apply(Index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.count" id="apidoc.element.elastical.Client.prototype.count">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>count
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">count = function (options, callback) {
+    var url   = '',
+        hasOptions;
+    if (typeof options === 'function') {
+        callback = options;
+        options  = {};
+    }
+    if(typeof callback !== 'function'){
+      var err =  new Error("callback is not a function");
+      var stack = err.stack;
+      throw err;
+    }
+
+    // Create a copy of options so we can modify it.
+    options = util.merge(options || {});
+
+
+    if (options.index) {
+        url = '/' + encode(Array.isArray(options.index) ?
+            options.index.join(',') : options.index);
+
+        delete options.index;
+    }
+
+    // If a query is provided and it's a string, automatically turn it into
+    // a query_string query.
+    if (typeof options.query === 'string') {
+        options = {query_string: {query: options.query}};
+    }
+
+    if (options.type) {
+        if (!url) {
+            url = '/_all';
+        }
+
+        url += '/' + encode(Array.isArray(options.type) ?
+            options.type.join(',') : options.type);
+
+        delete options.type;
+    }
+
+    hasOptions = !!Object.keys(options).length;
+    url += '/_count';
+    options.curlDebug = true;
+    var myOptions = { method: hasOptions ? 'POST' : 'GET'};
+    if(hasOptions){
+      myOptions.json = options;
+    }
+    this._request(url, myOptions, function (err, res) {
+        if (err) {
+          return callback(err, null, res), undefined;
+        }
+        if(res._shards.failed &gt; 0){
+          return callback(new Error(res._shards.failures.reason), null, res), undefined;
+        }
+        return callback(null, res.count, res);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.createIndex" id="apidoc.element.elastical.Client.prototype.createIndex">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>createIndex
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createIndex = function () {
+    var args = Array.prototype.slice.call(arguments);
+
+    args.unshift(this);
+    return Index[methodName].apply(Index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.delete" id="apidoc.element.elastical.Client.prototype.delete">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>delete
+        <span class="apidocSignatureSpan">(indexName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (indexName) {
+    var args  = Array.prototype.slice.call(arguments, 1),
+        index = this.getIndex(indexName);
+
+    return index[methodName].apply(index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.deleteIndex" id="apidoc.element.elastical.Client.prototype.deleteIndex">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>deleteIndex
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteIndex = function () {
+    var args = Array.prototype.slice.call(arguments);
+
+    args.unshift(this);
+    return Index[methodName].apply(Index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.deletePercolator" id="apidoc.element.elastical.Client.prototype.deletePercolator">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>deletePercolator
+        <span class="apidocSignatureSpan">(indexName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deletePercolator = function (indexName) {
+    var args  = Array.prototype.slice.call(arguments, 1),
+        index = this.getIndex(indexName);
+
+    return index[methodName].apply(index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.deleteRiver" id="apidoc.element.elastical.Client.prototype.deleteRiver">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>deleteRiver
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteRiver = function () {
+    var args = Array.prototype.slice.call(arguments);
+
+    args.unshift(this);
+    return Index[methodName].apply(Index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.get" id="apidoc.element.elastical.Client.prototype.get">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>get
+        <span class="apidocSignatureSpan">(indexName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (indexName) {
+    var args  = Array.prototype.slice.call(arguments, 1),
+        index = this.getIndex(indexName);
+
+    return index[methodName].apply(index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+Retrieve a previously-indexed document by id:
+
+```js
+// Specify the index and the document id.
+client.<span class="apidocCodeKeywordSpan">get</span>('blog', '42', function (err, doc, res) {
+    // `err` is an Error, or `null` on success.
+    // `doc` is the parsed document data.
+    // `res` is the full parsed ElasticSearch response data.
+});
+```
+
+Perform a search:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.getAliases" id="apidoc.element.elastical.Client.prototype.getAliases">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>getAliases
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAliases = function () {
+    var args = Array.prototype.slice.call(arguments);
+
+    args.unshift(this);
+    return Index[methodName].apply(Index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.getIndex" id="apidoc.element.elastical.Client.prototype.getIndex">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>getIndex
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getIndex = function (name) {
+    return this._indexCache[name] ||
+        (this._indexCache[name] = new Index(this, name));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.getMapping" id="apidoc.element.elastical.Client.prototype.getMapping">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>getMapping
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMapping = function () {
+    var args = Array.prototype.slice.call(arguments);
+
+    args.unshift(this);
+    return Index[methodName].apply(Index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.getPercolator" id="apidoc.element.elastical.Client.prototype.getPercolator">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>getPercolator
+        <span class="apidocSignatureSpan">(indexName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPercolator = function (indexName) {
+    var args  = Array.prototype.slice.call(arguments, 1),
+        index = this.getIndex(indexName);
+
+    return index[methodName].apply(index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.getRiver" id="apidoc.element.elastical.Client.prototype.getRiver">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>getRiver
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRiver = function () {
+    var args = Array.prototype.slice.call(arguments);
+
+    args.unshift(this);
+    return Index[methodName].apply(Index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.getSettings" id="apidoc.element.elastical.Client.prototype.getSettings">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>getSettings
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSettings = function () {
+    var args = Array.prototype.slice.call(arguments);
+
+    args.unshift(this);
+    return Index[methodName].apply(Index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.index" id="apidoc.element.elastical.Client.prototype.index">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>index
+        <span class="apidocSignatureSpan">(indexName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">index = function (indexName) {
+    var args  = Array.prototype.slice.call(arguments, 1),
+        index = this.getIndex(indexName);
+
+    return index[methodName].apply(index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var client = new elastical.Client('example.com', {port: 1234});
+```
+
+Index a document:
+
+```js
+// Specify the index name, document type, and document to index.
+client.<span class="apidocCodeKeywordSpan">index</span>('blog', 'post', {
+    title: "Welcome to my stupid blog",
+    body : "This is the only thing I'll ever post.",
+    tags : ["welcome", "first post", "last post"]
+}, function (err, res) {
+    // `err` is an Error, or `null` on success.
+    // `res` is the parsed ElasticSearch response data.
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.indexExists" id="apidoc.element.elastical.Client.prototype.indexExists">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>indexExists
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">indexExists = function () {
+    var args = Array.prototype.slice.call(arguments);
+
+    args.unshift(this);
+    return Index[methodName].apply(Index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.multiGet" id="apidoc.element.elastical.Client.prototype.multiGet">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>multiGet
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">multiGet = function () {
+    var args = Array.prototype.slice.call(arguments);
+
+    args.unshift(this);
+    return Index[methodName].apply(Index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.percolate" id="apidoc.element.elastical.Client.prototype.percolate">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>percolate
+        <span class="apidocSignatureSpan">(indexName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">percolate = function (indexName) {
+    var args  = Array.prototype.slice.call(arguments, 1),
+        index = this.getIndex(indexName);
+
+    return index[methodName].apply(index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.putMapping" id="apidoc.element.elastical.Client.prototype.putMapping">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>putMapping
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">putMapping = function () {
+    var args = Array.prototype.slice.call(arguments);
+
+    args.unshift(this);
+    return Index[methodName].apply(Index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.putRiver" id="apidoc.element.elastical.Client.prototype.putRiver">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>putRiver
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">putRiver = function () {
+    var args = Array.prototype.slice.call(arguments);
+
+    args.unshift(this);
+    return Index[methodName].apply(Index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.refresh" id="apidoc.element.elastical.Client.prototype.refresh">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>refresh
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">refresh = function () {
+    var args = Array.prototype.slice.call(arguments);
+
+    args.unshift(this);
+    return Index[methodName].apply(Index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.search" id="apidoc.element.elastical.Client.prototype.search">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>search
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">search = function (options, callback) {
+    var query = [],
+        url   = '',
+        hasOptions;
+
+    if (typeof options === 'function') {
+        callback = options;
+        options  = {};
+    }
+    var useScrollingEndpoint = (options.scroll_id != null);
+    // Create a copy of options so we can modify it.
+    options = util.merge(options || {});
+
+    // Some options must be passed as query parameters. Find those options
+    // and move them into the query param array.
+    this._SEARCH_PARAMS.forEach(function (name) {
+        var value = options[name];
+
+        if (typeof value !== 'undefined') {
+            if (value === true || value === false) {
+                query.push(encode(name) + '=' + (value ? '1' : '0'));
+            } else {
+                query.push(encode(name) + '=' + encode(value));
+            }
+
+            delete options[name];
+        }
+    });
+
+    if (options.fields) {
+        options.fields = Array.isArray(options.fields) ? options.fields :
+            [options.fields];
+    }
+
+    if (options.index) {
+        url = '/' + encode(Array.isArray(options.index) ?
+            options.index.join(',') : options.index);
+
+        delete options.index;
+    }
+
+    // If a query is provided and it's a string, automatically turn it into
+    // a query_string query.
+    if (typeof options.query === 'string') {
+        options.query = {query_string: {query: options.query}};
+    }
+
+    if (options.type) {
+        if (!url) {
+            url = '/_all';
+        }
+
+        url += '/' + encode(Array.isArray(options.type) ?
+            options.type.join(',') : options.type);
+
+        delete options.type;
+    }
+
+    hasOptions = !!Object.keys(options).length;
+
+    url += '/_search';
+
+    if(useScrollingEndpoint){
+      url += '/scroll';
+    }
+
+    if (query.length) {
+        url += '?' + query.join('&amp;');
+    }
+
+    this._request(url, {
+        method: hasOptions ? 'POST' : 'GET',
+        json  : hasOptions ? options : {}
+    }, function (err, res) {
+        if (err) { return callback(err, null, res), undefined; }
+        callback(null, res.hits, res);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+Perform a search:
+
+```js
+// Simple string query (automatically turned into a query_string query).
+client.<span class="apidocCodeKeywordSpan">search</span>({query: 'welcome'}, function (err, results, res) {
+    // `err` is an Error, or `null` on success.
+    // `results` is an object containing search hits.
+    // `res` is the full parsed ElasticSearch response data.
+});
+
+// Custom query options (this is equivalent to the previous example, just
+// without the magic).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.set" id="apidoc.element.elastical.Client.prototype.set">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>set
+        <span class="apidocSignatureSpan">(indexName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (indexName) {
+    var args  = Array.prototype.slice.call(arguments, 1),
+        index = this.getIndex(indexName);
+
+    return index[methodName].apply(index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.setPercolator" id="apidoc.element.elastical.Client.prototype.setPercolator">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>setPercolator
+        <span class="apidocSignatureSpan">(indexName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setPercolator = function (indexName) {
+    var args  = Array.prototype.slice.call(arguments, 1),
+        index = this.getIndex(indexName);
+
+    return index[methodName].apply(index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.stats" id="apidoc.element.elastical.Client.prototype.stats">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>stats
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stats = function (options, callback) {
+  var query = [],
+      url = '',
+      hasOptions;
+
+  if (typeof options === 'function') {
+    callback = options;
+    options = {};
+  }
+  //Create a copy of options so we can modify it.
+  options = util.merge(options || {});
+
+  if (options.index) {
+    url = '/' + encode(Array.isArray(options.index) ?
+      options.index.join(',') : options.index);
+
+    delete options.index;
+    //Look for types only if there is an index
+    if (options.types) {
+      query.push(encode('types') + '=' + encode(Array.isArray(options.types) ?
+        options.types.join(',') : options.types));
+    }
+    delete options.types;
+  }
+
+  url += '/_stats';
+
+  util.each(options, function (value, name) {
+      if (value === true || value === false) {
+          value = value ? '1' : '0';
+      }
+
+      query.push(encode(name) + '=' + encode(value));
+  });
+
+  if (query.length) {
+    url += '?' + query.join('&amp;');
+  }
+
+  this._request(url, {
+      method: 'GET'
+  }, function (err, res) {
+    if(err) { return callback(err, null, res), undefined; }
+    callback(null, res);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Client.prototype.updateSettings" id="apidoc.element.elastical.Client.prototype.updateSettings">
+        function <span class="apidocSignatureSpan">elastical.Client.prototype.</span>updateSettings
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">updateSettings = function () {
+    var args = Array.prototype.slice.call(arguments);
+
+    args.unshift(this);
+    return Index[methodName].apply(Index, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.elastical.Index" id="apidoc.module.elastical.Index">module elastical.Index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.Index" id="apidoc.element.elastical.Index.Index">
+        function <span class="apidocSignatureSpan">elastical.</span>Index
+        <span class="apidocSignatureSpan">(client, name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Index(client, name) {
+    this.client = client;
+    this.name   = name;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.analyze" id="apidoc.element.elastical.Index.analyze">
+        function <span class="apidocSignatureSpan">elastical.Index.</span>analyze
+        <span class="apidocSignatureSpan">(client, text, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">analyze = function (client, text, options, callback) {
+    var params, url = '/_analyze';
+    if (typeof options === 'function') {
+        callback = options;
+        options  = {};
+    }
+
+    callback || (callback = noop);
+    params = util.merge(options);
+
+    if (params.index) {
+        url = '/' + encode(params.index) + '/_analyze';
+        delete params.index;
+    }
+
+    var query = [ 'text=' + encode(text) ];
+    util.each(params, function (value, name) {
+        query.push(encode(name) + '=' + encode(value));
+    });
+
+    if (query.length) {
+        url += '?' + query.join('&amp;');
+    }
+
+    client._request(url, { method: 'GET' }, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.applyAliasesActions" id="apidoc.element.elastical.Index.applyAliasesActions">
+        function <span class="apidocSignatureSpan">elastical.Index.</span>applyAliasesActions
+        <span class="apidocSignatureSpan">(client, actions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">applyAliasesActions = function (client, actions, callback) {
+    client._request('/_aliases', {
+        method: 'POST',
+        json: {actions:actions}
+    }, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.bulk" id="apidoc.element.elastical.Index.bulk">
+        function <span class="apidocSignatureSpan">elastical.Index.</span>bulk
+        <span class="apidocSignatureSpan">(client, operations, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bulk = function (client, operations, options, callback) {
+    if (typeof options === 'function') {
+        callback = options;
+        options  = {};
+    }
+
+    callback || (callback = noop);
+    options || (options = {});
+
+    var body  = [],
+        query = [],
+        url   = '/_bulk';
+
+    if (options.index) {
+        url = '/' + encode(options.index) + '/_bulk';
+        delete options.index;
+    }
+
+    operations.forEach(function (op) {
+        var action = Object.keys(op)[0],
+            input  = op[action],
+            line   = {},
+            name;
+
+        line[action] = {};
+
+        for (name in input) {
+            if (name !== 'data' &amp;&amp; input.hasOwnProperty(name)) {
+                // Allow '_index', '_type', etc. in addition to 'index', 'type',
+                // etc.
+                if (name.charAt(0) === '_') {
+                    line[action][name] = input[name];
+                } else {
+                    // ElasticSearch currently only supports 'percolate', not
+                    // '_percolate'.
+                    if (name === 'percolate') {
+                        line[action][name] = input[name];
+                    } else {
+                        line[action]['_' + name] = input[name];
+                    }
+                }
+            }
+        }
+
+        body.push(JSON.stringify(line));
+
+        if (action === 'create' || action === 'index') {
+            body.push(JSON.stringify(input.data || {}));
+        }
+    });
+
+    util.each(options, function (value, name) {
+        if (value === true || value === false) {
+            value = value ? '1' : '0';
+        }
+
+        query.push(encode(name) + '=' + encode(value));
+    });
+
+    if (query.length) {
+        url += '?' + query.join('&amp;');
+    }
+
+    client._request(url, {
+        method: 'PUT',
+        body  : body.join('\n') + '\n'
+    }, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.count" id="apidoc.element.elastical.Index.count">
+        function <span class="apidocSignatureSpan">elastical.Index.</span>count
+        <span class="apidocSignatureSpan">(client, names, type, query, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">count = function (client, names, type, query, callback) {
+    var url;
+    if (typeof query === 'function') {
+        callback = query;
+        query     = null;
+    }
+    if (typeof type === 'function') {
+        callback = type;
+        query     = null;
+        type     = null;
+    }
+
+    if (Array.isArray(names)) {
+        names = names.join(',');
+    }
+
+    names = names.trim();
+    url   = '/' + encode(names);
+
+    if (type) {
+        url += '/' + encode(type);
+    }
+
+    url += '/_count';
+    if (query) {
+        url += '?q=' + encode(query);
+    } else {
+      // count in elastic Search require a query and returns an error if it does not find it:
+      // {"error":"No query to execute, not in body, and not bounded to 'q' parameter"}%
+      // perhaps there is better than that to do?
+      url += '?q=*';
+    }
+
+    client._request(url, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.create" id="apidoc.element.elastical.Index.create">
+        function <span class="apidocSignatureSpan">elastical.Index.</span>create
+        <span class="apidocSignatureSpan">(client, name, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (client, name, options, callback) {
+    if (typeof options === 'function') {
+        callback = options;
+        options  = {};
+    }
+
+    client._request('/' + encode(name), {
+        method: 'PUT',
+        json  : options
+    }, callback &amp;&amp; function (err, data) {
+        if (err) { return callback(err, data), undefined; }
+        callback(null, client.getIndex(name), data);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.delete" id="apidoc.element.elastical.Index.delete">
+        function <span class="apidocSignatureSpan">elastical.Index.</span>delete
+        <span class="apidocSignatureSpan">(client, names, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (client, names, callback) {
+    if (typeof names === 'function') {
+        callback = names;
+        names    = undefined;
+    }
+
+    if (Array.isArray(names)) {
+        names = names.join(',');
+    }
+
+    client._request('/' + encode(names || ''), {method: 'DELETE'}, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.deleteRiver" id="apidoc.element.elastical.Index.deleteRiver">
+        function <span class="apidocSignatureSpan">elastical.Index.</span>deleteRiver
+        <span class="apidocSignatureSpan">( client, name, callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteRiver = function ( client, name, callback ){
+    client._request('/_river/' + name, { method: 'DELETE' }, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.exists" id="apidoc.element.elastical.Index.exists">
+        function <span class="apidocSignatureSpan">elastical.Index.</span>exists
+        <span class="apidocSignatureSpan">(client, names, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exists = function (client, names, callback) {
+    if (Array.isArray(names)) {
+        names = names.join(',');
+    }
+
+    client._request('/' + encode(names), {method: 'HEAD'}, function (err) {
+        callback(null, !err);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.getAliases" id="apidoc.element.elastical.Index.getAliases">
+        function <span class="apidocSignatureSpan">elastical.Index.</span>getAliases
+        <span class="apidocSignatureSpan">(client, names, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAliases = function (client, names, callback) {
+    var url = '';
+
+    if(names){
+        if (Array.isArray(names)) {
+            names = names.join(',');
+        }
+
+        names = names.trim();
+        url = '/' + encode(names);
+    }
+
+    url += '/_aliases';
+
+    client._request(url, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.getMapping" id="apidoc.element.elastical.Index.getMapping">
+        function <span class="apidocSignatureSpan">elastical.Index.</span>getMapping
+        <span class="apidocSignatureSpan">(client, names, type, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMapping = function (client, names, type, callback) {
+    var url;
+
+    if (typeof type === 'function') {
+        callback = type;
+        type     = null;
+    }
+
+    if (Array.isArray(names)) {
+        names = names.join(',');
+    }
+
+    names = names.trim();
+    url   = '/' + encode(names);
+
+    if (type) {
+        url += '/' + encode(type);
+    }
+
+    url += '/_mapping';
+
+    client._request(url, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.getRiver" id="apidoc.element.elastical.Index.getRiver">
+        function <span class="apidocSignatureSpan">elastical.Index.</span>getRiver
+        <span class="apidocSignatureSpan">( client, name, callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRiver = function ( client, name, callback ){
+    client._request('/_river/' + name + '/_meta', { method: 'GET' }, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.getSettings" id="apidoc.element.elastical.Index.getSettings">
+        function <span class="apidocSignatureSpan">elastical.Index.</span>getSettings
+        <span class="apidocSignatureSpan">(client, names, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSettings = function (client, names, callback) {
+    var url;
+
+    if (Array.isArray(names)) {
+        names = names.join(',');
+    }
+
+    names = names.trim();
+    url   = '/' + encode(names);
+
+    url += '/_settings';
+
+    client._request(url, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.multiGet" id="apidoc.element.elastical.Index.multiGet">
+        function <span class="apidocSignatureSpan">elastical.Index.</span>multiGet
+        <span class="apidocSignatureSpan">(client, index, type, data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">multiGet = function (client, index, type, data, callback) {
+    var url = '';
+    if(index)
+        url +='/'+encode(index)   ;
+    if(type)
+        url +=  '/'+encode(type) ;
+    url += '/_mget';
+    client._request(url, {
+        method: 'POST',
+        json  : data
+    }, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.putMapping" id="apidoc.element.elastical.Index.putMapping">
+        function <span class="apidocSignatureSpan">elastical.Index.</span>putMapping
+        <span class="apidocSignatureSpan">(client, names, type, mapping, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">putMapping = function (client, names, type, mapping, callback) {
+    if (typeof type === 'object') {
+        callback = mapping;
+        mapping  = type;
+        type     = names;
+        names    = undefined;
+    }
+
+    if (Array.isArray(names)) {
+        names = names.join(',');
+    }
+
+    names || (names = '_all');
+
+    client._request('/' + encode(names) + '/' + encode(type) + '/_mapping', {
+        method: 'PUT',
+        json: mapping
+    }, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.putRiver" id="apidoc.element.elastical.Index.putRiver">
+        function <span class="apidocSignatureSpan">elastical.Index.</span>putRiver
+        <span class="apidocSignatureSpan">( client, name, config, callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">putRiver = function ( client, name, config, callback ){
+    client._request('/_river/' + name + '/_meta', {
+        method: 'PUT',
+        json: config
+    }, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.refresh" id="apidoc.element.elastical.Index.refresh">
+        function <span class="apidocSignatureSpan">elastical.Index.</span>refresh
+        <span class="apidocSignatureSpan">(client, names, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">refresh = function (client, names, callback) {
+    if (typeof names === 'function') {
+        callback = names;
+        names    = undefined;
+    }
+
+    if (Array.isArray(names)) {
+        names = names.join(',');
+    }
+
+    names || (names = '_all');
+
+    client._request('/' + encode(names) + '/_refresh', {method: 'POST'},
+        callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.updateSettings" id="apidoc.element.elastical.Index.updateSettings">
+        function <span class="apidocSignatureSpan">elastical.Index.</span>updateSettings
+        <span class="apidocSignatureSpan">(client, index, settings, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">updateSettings = function (client, index, settings, callback) {
+    var params, url = '';
+
+    if (typeof index === 'object' &amp;&amp; !Array.isArray(index)) {
+        callback = settings;
+        settings = index;
+        index = null;
+    }
+
+    callback || (callback = noop);
+
+    if (index) {
+        if (Array.isArray(index)) {
+            index = index.join(',');
+        }
+
+        index = index.trim();
+        url   = '/' + encode(index);
+    }
+
+    url += '/_settings';
+
+    client._request(url, {
+        method: 'PUT',
+        json: settings
+    }, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.elastical.Index.prototype" id="apidoc.module.elastical.Index.prototype">module elastical.Index.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.analyze" id="apidoc.element.elastical.Index.prototype.analyze">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>analyze
+        <span class="apidocSignatureSpan">(text, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">analyze = function (text, options, callback) {
+    if (typeof options === 'function') {
+        callback = options;
+        options  = {};
+    }
+    options.index = this.name;
+    Index.analyze(this.client, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.count" id="apidoc.element.elastical.Index.prototype.count">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>count
+        <span class="apidocSignatureSpan">(query, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">count = function (query, callback) {
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.delete" id="apidoc.element.elastical.Index.prototype.delete">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>delete
+        <span class="apidocSignatureSpan">(type, id, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (type, id, options, callback) {
+      var query = [],
+          ignoreMissing, params, url;
+
+      if (typeof options === 'function') {
+          callback = options;
+          options  = {};
+      }
+
+      callback || (callback = noop);
+      params = util.merge(options);
+
+      if (typeof params.ignoreMissing !== 'undefined') {
+          ignoreMissing = params.ignoreMissing;
+          delete params.ignoreMissing;
+      }
+
+      if(params.query) {
+          url = '/' + encode(this.name);
+          if (type) {
+              url += '/' + encode(Array.isArray(type) ? type.join(',') : type);
+          }
+          url += '/_query';
+
+          this.client._request(url, {method: 'DELETE', json: params.query}, function (err, res) {
+              if (err) {
+                  if (ignoreMissing &amp;&amp; res &amp;&amp; res.found === false) {
+                      return callback(null, res), undefined;
+                  } else {
+                      return callback(err, res), undefined;
+                  }
+              }
+              callback(null, res);
+          });
+      } else {
+          util.each(params, function (value, name) {
+              if (value === true || value === false) {
+                  value = value ? '1' : '0';
+              }
+
+              query.push(encode(name) + '=' + encode(value));
+          });
+
+          url = '/' + encode(this.name) + '/' + encode(type) + '/' + encode(id);
+
+          if (query.length) {
+              url += '?' + query.join('&amp;');
+          }
+
+          this.client._request(url, {method: 'DELETE'}, function (err, res) {
+              if (err) {
+                  if (ignoreMissing &amp;&amp; res &amp;&amp; res.found === false) {
+                      return callback(null, res), undefined;
+                  } else {
+                      return callback(err, res), undefined;
+                  }
+              }
+
+              callback(null, res);
+          });
+      }
+  }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.deleteIndex" id="apidoc.element.elastical.Index.prototype.deleteIndex">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>deleteIndex
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteIndex = function (callback) {
+    Index.delete(this.client, this.name, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.deleteMapping" id="apidoc.element.elastical.Index.prototype.deleteMapping">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>deleteMapping
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteMapping = function (type) {
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.deletePercolator" id="apidoc.element.elastical.Index.prototype.deletePercolator">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>deletePercolator
+        <span class="apidocSignatureSpan">(percolator, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deletePercolator = function (percolator, callback){
+    var url = '/_percolator/'+ this.name +'/'+encode(percolator);
+    this.client._request(url, {
+        method: 'DELETE'
+    }, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.deleteRiver" id="apidoc.element.elastical.Index.prototype.deleteRiver">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>deleteRiver
+        <span class="apidocSignatureSpan">( name, callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteRiver = function ( name, callback ){
+    Index.deleteRiver( this.client, name, callback );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.exists" id="apidoc.element.elastical.Index.prototype.exists">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>exists
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exists = function (callback) {
+    Index.exists(this.client, this.name, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.get" id="apidoc.element.elastical.Index.prototype.get">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>get
+        <span class="apidocSignatureSpan">(id, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (id, options, callback) {
+    var query = [],
+        type  = '_all',
+        ignoreMissing, params, url;
+
+    if (typeof options === 'function') {
+        callback = options;
+        options  = {};
+    }
+
+    params = util.merge(options);
+
+    if (params.fields) {
+        params.fields = Array.isArray(params.fields) ?
+            params.fields.join(',') : params.fields;
+    }
+
+    if (typeof params.ignoreMissing !== 'undefined') {
+        ignoreMissing = params.ignoreMissing;
+        delete params.ignoreMissing;
+    }
+
+    if (params.type) {
+        type = params.type;
+        delete params.type;
+    }
+
+    util.each(params, function (value, name) {
+        if (value === true || value === false) {
+            value = value ? '1' : '0';
+        }
+
+        query.push(encode(name) + '=' + encode(value));
+    });
+
+    url = '/' + encode(this.name) + '/' + encode(type) + '/' + encode(id);
+
+    if (query.length) {
+        url += '?' + query.join('&amp;');
+    }
+
+    this.client._request(url, {method: 'GET'}, function (err, res) {
+        if (err) {
+            if (ignoreMissing &amp;&amp; res &amp;&amp; (res.exists === false
+                    || res.error.indexOf('IndexMissing') !== -1)) {
+                return callback(null, null, res), undefined;
+            } else {
+                return callback(err, null, res), undefined;
+            }
+        }
+
+        callback(null, res.fields || res._source, res);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+Retrieve a previously-indexed document by id:
+
+```js
+// Specify the index and the document id.
+client.<span class="apidocCodeKeywordSpan">get</span>('blog', '42', function (err, doc, res) {
+    // `err` is an Error, or `null` on success.
+    // `doc` is the parsed document data.
+    // `res` is the full parsed ElasticSearch response data.
+});
+```
+
+Perform a search:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.getMapping" id="apidoc.element.elastical.Index.prototype.getMapping">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>getMapping
+        <span class="apidocSignatureSpan">(type, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMapping = function (type, callback) {
+    Index.getMapping.apply(null, [this.client, this.name].concat(
+        Array.prototype.slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.getPercolator" id="apidoc.element.elastical.Index.prototype.getPercolator">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>getPercolator
+        <span class="apidocSignatureSpan">(percolator, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPercolator = function (percolator, callback){
+    var url = '/_percolator/'+this.name+'/'+encode(percolator);
+    this.client._request(url, {
+        method: 'GET'
+    }, function (err, res) {
+        if (err) { return callback(err, null, res), undefined; }
+        return callback(null, res._source, res);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.getRiver" id="apidoc.element.elastical.Index.prototype.getRiver">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>getRiver
+        <span class="apidocSignatureSpan">( name, callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRiver = function ( name, callback ){
+    Index.getRiver( this.client, name, callback );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.index" id="apidoc.element.elastical.Index.prototype.index">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>index
+        <span class="apidocSignatureSpan">(type, doc, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">index = function (type, doc, options, callback) {
+    var query = [],
+        id, params, url;
+
+    if (typeof options === 'function') {
+        callback = options;
+        options  = {};
+    }
+
+    params = util.merge(options || {});
+
+    if (params.create) {
+        params.op_type = 'create';
+        delete params.create;
+    }
+
+    if (params.id) {
+        id = params.id;
+        delete params.id;
+    }
+
+    if (params.version &amp;&amp; !params.version_type) {
+        params.version_type = 'external';
+    }
+
+    util.each(params, function (value, name) {
+        if (value === true || value === false) {
+            value = value ? '1' : '0';
+        }
+
+        query.push(encode(name) + '=' + encode(value));
+    });
+
+    url = '/' + encode(this.name) + '/' + encode(type);
+
+    if (id) {
+        url += '/' + encode(id);
+    }
+
+    if (query.length) {
+        url += '?' + query.join('&amp;');
+    }
+
+    this.client._request(url, {
+        method: id ? 'PUT' : 'POST',
+        json  : doc
+    }, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var client = new elastical.Client('example.com', {port: 1234});
+```
+
+Index a document:
+
+```js
+// Specify the index name, document type, and document to index.
+client.<span class="apidocCodeKeywordSpan">index</span>('blog', 'post', {
+    title: "Welcome to my stupid blog",
+    body : "This is the only thing I'll ever post.",
+    tags : ["welcome", "first post", "last post"]
+}, function (err, res) {
+    // `err` is an Error, or `null` on success.
+    // `res` is the parsed ElasticSearch response data.
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.optimize" id="apidoc.element.elastical.Index.prototype.optimize">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>optimize
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">optimize = function (options) {
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.percolate" id="apidoc.element.elastical.Index.prototype.percolate">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>percolate
+        <span class="apidocSignatureSpan">(type, doc, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">percolate = function (type, doc, callback){
+    // this check is required because elasticsearch does not return an error
+    // but times out if the'doc' element is not present in the body of the
+    // request
+    if(doc['doc'] === undefined){
+        doc = {'doc': doc};
+    }
+    var url = '/'+ this.name+'/'+type+'/_percolate';
+    this.client._request(url, {
+        method: 'GET',
+        json  : doc
+    }, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.putMapping" id="apidoc.element.elastical.Index.prototype.putMapping">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>putMapping
+        <span class="apidocSignatureSpan">(type, mapping, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">putMapping = function (type, mapping, callback) {
+    Index.putMapping(this.client, this.name, type, mapping, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.putRiver" id="apidoc.element.elastical.Index.prototype.putRiver">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>putRiver
+        <span class="apidocSignatureSpan">( name, config, callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">putRiver = function ( name, config, callback ){
+    Index.putRiver( this.client, name, config, callback );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.refresh" id="apidoc.element.elastical.Index.prototype.refresh">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>refresh
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">refresh = function (callback) {
+    Index.refresh(this.client, this.name, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.search" id="apidoc.element.elastical.Index.prototype.search">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>search
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">search = function (options, callback) {
+    if (typeof options === 'function') {
+        callback = options;
+        options  = {};
+    }
+
+    this.client.search(util.merge(options, {index: this.name}), callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+Perform a search:
+
+```js
+// Simple string query (automatically turned into a query_string query).
+client.<span class="apidocCodeKeywordSpan">search</span>({query: 'welcome'}, function (err, results, res) {
+    // `err` is an Error, or `null` on success.
+    // `results` is an object containing search hits.
+    // `res` is the full parsed ElasticSearch response data.
+});
+
+// Custom query options (this is equivalent to the previous example, just
+// without the magic).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.set" id="apidoc.element.elastical.Index.prototype.set">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>set
+        <span class="apidocSignatureSpan">(type, doc, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (type, doc, options, callback) {
+    var query = [],
+        id, params, url;
+
+    if (typeof options === 'function') {
+        callback = options;
+        options  = {};
+    }
+
+    params = util.merge(options || {});
+
+    if (params.create) {
+        params.op_type = 'create';
+        delete params.create;
+    }
+
+    if (params.id) {
+        id = params.id;
+        delete params.id;
+    }
+
+    if (params.version &amp;&amp; !params.version_type) {
+        params.version_type = 'external';
+    }
+
+    util.each(params, function (value, name) {
+        if (value === true || value === false) {
+            value = value ? '1' : '0';
+        }
+
+        query.push(encode(name) + '=' + encode(value));
+    });
+
+    url = '/' + encode(this.name) + '/' + encode(type);
+
+    if (id) {
+        url += '/' + encode(id);
+    }
+
+    if (query.length) {
+        url += '?' + query.join('&amp;');
+    }
+
+    this.client._request(url, {
+        method: id ? 'PUT' : 'POST',
+        json  : doc
+    }, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.setPercolator" id="apidoc.element.elastical.Index.prototype.setPercolator">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>setPercolator
+        <span class="apidocSignatureSpan">(percolator, query, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setPercolator = function (percolator, query, callback){
+    var url = '/_percolator/';
+    url += this.name;
+    url += '/'+encode(percolator);
+    this.client._request(url, {
+        method: 'POST',
+        json  : query
+    }, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.Index.prototype.stats" id="apidoc.element.elastical.Index.prototype.stats">
+        function <span class="apidocSignatureSpan">elastical.Index.prototype.</span>stats
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stats = function (options, callback) {
+  if (typeof options === 'function') {
+    callback = options;
+    options = {};
+  }
+  this.client.stats(util.merge(options, {index: this.name}), callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.elastical.util" id="apidoc.module.elastical.util">module elastical.util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.util.each" id="apidoc.element.elastical.util.each">
+        function <span class="apidocSignatureSpan">elastical.util.</span>each
+        <span class="apidocSignatureSpan">(obj, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function each(obj, callback) {
+    if (Array.isArray(obj)) {
+        obj.forEach(callback);
+    } else {
+        Object.keys(obj).forEach(function (key) {
+            callback(obj[key], key);
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.util.merge" id="apidoc.element.elastical.util.merge">
+        function <span class="apidocSignatureSpan">elastical.util.</span>merge
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function merge() {
+    var args   = Array.prototype.slice.call(arguments),
+        target = {};
+
+    args.unshift(target);
+    mix.apply(this, args);
+
+    return target;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.util.mix" id="apidoc.element.elastical.util.mix">
+        function <span class="apidocSignatureSpan">elastical.util.</span>mix
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mix() {
+    var args   = Array.prototype.slice.call(arguments),
+        target = args.shift(),
+        i, key, keys, len, source, value;
+
+    while ((source = args.shift())) {
+        keys = Object.keys(source);
+
+        for (i = 0, len = keys.length; i &lt; len; ++i) {
+            key   = keys[i];
+            value = source[key];
+
+            if(value == null){
+                // if value is null or undefined keep the value intact.
+                target[key] = value;
+            }else if (typeof value === 'object' &amp;&amp; !Array.isArray(value) &amp;&amp; !(value instanceof Date)) {
+                typeof target[key] === 'object' || (target[key] = {});
+                mix(target[key], value);
+            } else {
+                target[key] = value;
+            }
+        }
+    }
+
+    return target;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elastical.util.values" id="apidoc.element.elastical.util.values">
+        function <span class="apidocSignatureSpan">elastical.util.</span>values
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function values(obj) {
+    var i, items, keys, len;
+
+    if (Array.isArray(obj)) {
+        items = obj.concat();
+    } else {
+        keys  = Object.keys(obj);
+        items = [];
+
+        for (i = 0, len = keys.length; i &lt; len; ++i) {
+            items.push(obj[keys[i]]);
+        }
+    }
+
+    return items;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
